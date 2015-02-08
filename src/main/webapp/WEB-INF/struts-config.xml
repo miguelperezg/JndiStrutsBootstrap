@@ -4,14 +4,23 @@
 "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
 
 <struts-config>
-
+	<form-beans>
+		
+		<form-bean name="unoForm"
+			type="es.open4job.web.struts.controller.ListarUnoControladorForm" />
+	</form-beans>
 
 	<action-mappings>
-		<action path="/MostrarTodos"
-			type="com.open4job.struts.controller.ListarTodosControlador">
-			<forward name="success" path="/MostrarTodos.jsp" />
+		<action path="/mostrarTodos"
+			type="com.open4job.struts.controller.ListarTodosController">
+			<forward name="success" path="/mostrarTodos.jsp" />
+		</action>
+	
+		<action path="/mostrarUno"
+			type="es.open4job.web.struts.controller.ListarUnoControlador"
+			name="unoForm" input="/error.jsp">
+			<forward name="ok" path="/mostrarUno.jsp" />
 		</action>
 	</action-mappings>
-	
-
+	<message-resources parameter="com.open4job.struts.properties.Common" />
 </struts-config>   

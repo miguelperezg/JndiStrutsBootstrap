@@ -12,11 +12,11 @@ public class ParadaTaxiDAO {
 
 	public ParadaTaxiDAO() {
 	}
-	BaseDatosDirecta bbdd = new BaseDatosDirecta();
+	//BaseDatosDirecta bbdd = new BaseDatosDirecta();
 	
 	// Listado de las paradas de taxi
 
-	public ArrayList<ParadaTaxiVO> getListadoParadaTaxi()
+	public ArrayList<ParadaTaxiVO> getListadoParadaTaxi(BaseDatosDirecta bbdd)
 			throws Exception {
 		
 		Connection conexion = bbdd.abrirConexion().getConnection();
@@ -50,7 +50,7 @@ public class ParadaTaxiDAO {
 
 	// Devuelve la parada del taxi por el id
 
-	public ParadaTaxiVO getparadataxi(int id)
+	public ParadaTaxiVO getparadataxi(int id, BaseDatosDirecta bbdd)
 			throws Exception {
 		ParadaTaxiVO idLista = null;
 		ResultSet rs = null;
